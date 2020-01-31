@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2020-01-31T22:05:55.059+00:00
-  initializedAtString: 2020-01-31T22:05:55.059+00:00
+  lastUpdatedAtString: 2020-01-31T22:10:54.329+00:00
+  initializedAtString: 2020-01-31T22:10:52.294+00:00
   currentGitRemote:
     name: origin
     url: https://github.com/joaoalc/GGJ-Project-2020.git
