@@ -7,17 +7,31 @@ public class PlayerMove : MonoBehaviour {
     public bool jumpAllowed;
     Rigidbody2D rb;
 
+    float base_gravity_scale = 3;
+
     void Start() {
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update() {
+
+        
+
+
         if (Input.GetKeyDown(KeyCode.Space) && jumpAllowed)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
             jumpAllowed = false;
         }
+        else if(!Input.GetKey(KeyCode.Space) && !jumpAllowed)
+        {
 
+            GetComponent<Rigidbody2D>().gravityScale = base_gravity_scale * 2.75f;
+        }
+        if (!jumpAllowed && rb.velocity.y < -0.001f)
+        {
+            GetComponent<Rigidbody2D>().gravityScale = base_gravity_scale * 2f;
+        }
         if (Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
@@ -33,6 +47,7 @@ public class PlayerMove : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("ground"))
         {
+            GetComponent<Rigidbody2D>().gravityScale = base_gravity_scale;
             jumpAllowed = true;
         }
     }
