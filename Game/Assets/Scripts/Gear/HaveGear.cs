@@ -5,6 +5,7 @@ using UnityEngine;
 public class HaveGear : MonoBehaviour
 {
     private GetGear dMan;
+    public bool DestroyedGear = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class HaveGear : MonoBehaviour
         if (dMan.HaveGear)
         {
             Destroy(gameObject);
+            DestroyedGear = true;
         }
  
     }

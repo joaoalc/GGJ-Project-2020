@@ -5,6 +5,7 @@ using UnityEngine;
 public class HaveClock : MonoBehaviour
 {
     private GetClock dMan;
+    public bool DestroyedClock = false; 
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class HaveClock : MonoBehaviour
         if (dMan.HaveClock)
         {
             Destroy(gameObject);
+            DestroyedClock = true;
         }
 
     }
